@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanelventana" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelx4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jrfx4" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="FIGURA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabelx2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jrfx2" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabelx3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jrfx3" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabex1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jrfx1" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbxfigura" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabely2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabely1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabely3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabely4" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jrfy2" pref="44" max="32767" attributes="0"/>
+                                      <Component id="jrfy3" pref="44" max="32767" attributes="0"/>
+                                      <Component id="jrfy1" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jrfy4" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btndibujar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanelventana" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="FIGURA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxfigura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabex1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabely1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfx1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfy1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelx2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabely2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfx2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfy2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelx3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabely3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfy3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfx3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelx4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabely4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfx4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrfy4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="btndibujar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="58" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelventana">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="559" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="369" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+    <Component class="java.awt.Button" name="btndibujar">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Dibujar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndibujarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="FIGURA">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="FIGURA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbxfigura">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Cuadrado"/>
+            <StringItem index="1" value="Triangulo"/>
+            <StringItem index="2" value="Rectangulo"/>
+            <StringItem index="3" value=""/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxfiguraActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabex1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabely1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="y1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelx2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabely2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="y2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelx3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabely3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="y3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfx1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfy1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfx2">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfy2">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfy3">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfx3">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelx4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabely4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="y4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfx4">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jrfy4">
+    </Component>
+  </SubComponents>
+</Form>
