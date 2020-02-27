@@ -60,4 +60,28 @@ public class Figura {
         return area;
     }
 
+    public Coordenada[] getCoordenadas() {
+        return coordenadas;
+    }
+
+    public float getLado1() {
+        return lado1;
+    }
+
+    public float getLado2() {
+        return lado2;
+    }
+
+    public float getLado3() {
+        return lado3;
+    }
+
+    public float getArea() {
+        return area;
+    }
+
+    public float getPerimetro() {
+        return perimetro;
+    }
+
 }

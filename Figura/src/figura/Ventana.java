@@ -230,9 +230,12 @@ public class Ventana extends javax.swing.JFrame {
                 coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
                 coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
                 Triangulo triangulo = new Triangulo(coordenadas);
+                triangulo.pendientesTriandulo( ) ;
+                triangulo. angulosTriandulo( );
                 triangulo.Dibujar(jPanelventana.getGraphics());
                 jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
                 jlarea.setText(Float.toString(triangulo.calcularArea()));
+                
             } catch (Exception e) {
                 System.out.println(e);
             }
