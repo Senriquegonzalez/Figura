@@ -47,6 +47,10 @@ public class Ventana extends javax.swing.JFrame {
         jLabely4 = new javax.swing.JLabel();
         jrfx4 = new javax.swing.JTextField();
         jrfy4 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jlperimetro = new javax.swing.JLabel();
+        jLabelarea = new javax.swing.JLabel();
+        jlarea = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +97,14 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabely4.setText("y4");
 
+        jLabel1.setText("Perimetro =");
+
+        jlperimetro.setText(".");
+
+        jLabelarea.setText("Area=");
+
+        jlarea.setText(".");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,11 +113,6 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(jPanelventana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelx4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jrfx4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FIGURA)
@@ -125,7 +132,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbxfigura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabely2)
                                     .addComponent(jLabely1)
@@ -138,7 +145,23 @@ public class Ventana extends javax.swing.JFrame {
                                         .addComponent(jrfy3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                                         .addComponent(jrfy1))
                                     .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 16, Short.MAX_VALUE))))
+                        .addGap(0, 13, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelx4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jrfx4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabelarea)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jlarea, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jlperimetro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(12, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,7 +200,15 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jLabelx4)
                             .addComponent(jLabely4)
                             .addComponent(jrfx4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jlperimetro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelarea)
+                            .addComponent(jlarea))))
                 .addGap(26, 26, 26)
                 .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -188,17 +219,20 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btndibujarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndibujarActionPerformed
 
-        
+         jPanelventana.paintImmediately(00,00,jPanelventana.getWidth(),jPanelventana.getHeight());
+
         //define la figura que se  dibujara
         if (cbxfigura.getSelectedIndex() == 1) {
-
+            
             try {
                 Coordenada coordenadas[] = new Coordenada[3];
                 coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
                 coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
                 coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
-                Figura triangulo = new Figura(coordenadas);
+                Triangulo triangulo = new Triangulo(coordenadas);
                 triangulo.Dibujar(jPanelventana.getGraphics());
+                jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
+                jlarea.setText(Float.toString(triangulo.calcularArea()));
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -261,6 +295,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel FIGURA;
     private java.awt.Button btndibujar;
     private javax.swing.JComboBox cbxfigura;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelarea;
     private javax.swing.JLabel jLabelx2;
     private javax.swing.JLabel jLabelx3;
     private javax.swing.JLabel jLabelx4;
@@ -270,6 +306,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabely4;
     private javax.swing.JLabel jLabex1;
     private javax.swing.JPanel jPanelventana;
+    private javax.swing.JLabel jlarea;
+    private javax.swing.JLabel jlperimetro;
     private javax.swing.JTextField jrfx1;
     private javax.swing.JTextField jrfx2;
     private javax.swing.JTextField jrfx3;
