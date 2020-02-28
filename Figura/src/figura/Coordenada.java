@@ -10,14 +10,21 @@ package figura;
  * @author sergio
  */
 public class Coordenada {
+    //Se declaran dos variables para almacenar pares ordenados 
     private int ejeX;
     private int ejeY;
 
+    /**
+     * Se crea el constructor
+     */ 
     public Coordenada(int ejeX,int ejeY) {
         this.ejeX = ejeX;
         this.ejeY = ejeY;
     }
-
+    
+    /**
+    *Se crean los métodos getters y setters
+    */
     public int getEjeX() {
         return ejeX;
     }

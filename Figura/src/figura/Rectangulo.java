@@ -11,11 +11,16 @@ package figura;
  */
 public class Rectangulo extends CuadradoRectangulo{
 
+    /**
+     * Se crea el constructor
+     */ 
     public Rectangulo(Coordenada[] coordenadas) {
         super(coordenadas);
     }
     
-    
+    /**
+     * Se sobreescribe el método calcularArea el cual calcula el area de un rectangulo
+     */
     @Override
     public float calcularArea(){
         
@@ -26,7 +31,7 @@ public class Rectangulo extends CuadradoRectangulo{
         else{
             setArea(getLado1()*getLado3());
         }
-        
+        //retorna el valor del area de rectangulo
         return getArea();
     }
      

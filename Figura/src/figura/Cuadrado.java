@@ -11,6 +11,10 @@ package figura;
  */
 public class Cuadrado extends CuadradoRectangulo{
 
+    /**
+     * Se crea el consructor
+     * @param coordenadas 
+     */
     public Cuadrado(Coordenada[] coordenadas) {
         super(coordenadas);
     }
