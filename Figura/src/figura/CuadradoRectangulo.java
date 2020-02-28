@@ -1,5 +1,6 @@
 package figura;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 /**
@@ -26,6 +27,8 @@ public class CuadradoRectangulo extends Figura{
     
     @Override
     public void Dibujar(Graphics g){
+        
+        g.setColor(getColor());
         g.drawLine(coordenadas[0].getEjeX(), coordenadas[0].getEjeY(), coordenadas[1].getEjeX(), coordenadas[1].getEjeY());
         g.drawLine(coordenadas[1].getEjeX(), coordenadas[1].getEjeY(), coordenadas[2].getEjeX(), coordenadas[2].getEjeY());
         g.drawLine(coordenadas[2].getEjeX(), coordenadas[2].getEjeY(), coordenadas[3].getEjeX(), coordenadas[3].getEjeY());

@@ -8,6 +8,7 @@ package figura;
 /**
  *
  * @author sergio
+ * 
  */
 public class Ventana extends javax.swing.JFrame {
 
@@ -52,6 +53,10 @@ public class Ventana extends javax.swing.JFrame {
         jLabelarea = new javax.swing.JLabel();
         jlarea = new javax.swing.JLabel();
         jLabeTipo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        JTFg = new javax.swing.JTextField();
+        JTFb = new javax.swing.JTextField();
+        JTFr = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,7 +111,15 @@ public class Ventana extends javax.swing.JFrame {
 
         jlarea.setText(".");
 
-        jLabeTipo.setText("jLabel2");
+        jLabeTipo.setText(".");
+
+        jLabel2.setText("Color RGB");
+
+        JTFr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFrActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,61 +129,75 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(jPanelventana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FIGURA)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelx2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jrfx2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelx3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jrfx3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabex1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jrfx1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxfigura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabely2)
-                                    .addComponent(jLabely1)
-                                    .addComponent(jLabely3)
-                                    .addComponent(jLabely4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jrfy2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                                        .addComponent(jrfy3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                                        .addComponent(jrfy1))
-                                    .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 13, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelx4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jrfx4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabelarea)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jlarea, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jlperimetro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jrfx4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(69, 69, 69))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabelarea)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jlarea, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jlperimetro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 45, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addComponent(jLabeTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(FIGURA)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelx2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jrfx2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelx3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jrfx3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabex1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jrfx1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbxfigura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabely2)
+                                            .addComponent(jLabely1)
+                                            .addComponent(jLabely3)
+                                            .addComponent(jLabely4))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jrfy2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                                                .addComponent(jrfy3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                                                .addComponent(jrfy1))
+                                            .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JTFr, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(JTFg, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(JTFb, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19))
+                                    .addComponent(jLabel2))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,13 +231,13 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jLabely3)
                             .addComponent(jrfy3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jrfx3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelx4)
-                            .addComponent(jLabely4)
                             .addComponent(jrfx4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
+                            .addComponent(jrfy4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabely4)
+                            .addComponent(jLabelx4))
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(jlperimetro))
@@ -219,7 +246,14 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jLabelarea)
                             .addComponent(jlarea))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabeTipo)))
+                        .addComponent(jLabeTipo)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JTFg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26)
                 .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -233,16 +267,22 @@ public class Ventana extends javax.swing.JFrame {
         //Se utiliza para pintar nuevamente jpanel
         jPanelventana.paintImmediately(00, 00, jPanelventana.getWidth(), jPanelventana.getHeight());
 
-        //define la figura que se  dibujara
+        //Si es igual a 1 dibujara las coordenadas de la figura triangulo
         if (cbxfigura.getSelectedIndex() == 1) {
+            //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
             Coordenada coordenadas[] = new Coordenada[4];
             coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
             coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
             coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
+            //Se crea el try catch por si ingresa un null o un caracter especial
             try {
+                //Se declara y se instancia un objeto de la clase Triangulo
                 Triangulo triangulo = new Triangulo(coordenadas);
+                //Se llama al metodo dibujar donde se envia el Jpanel
+                triangulo.obtenerColor(Integer.parseInt(JTFr.getText()),Integer.parseInt(JTFg.getText()),Integer.parseInt(JTFb.getText()));
                 triangulo.Dibujar(jPanelventana.getGraphics());
 
+                //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
                 jlarea.setText(Float.toString(triangulo.calcularArea()));
                 jLabeTipo.setText(triangulo.definirTriangulo());
@@ -252,20 +292,52 @@ public class Ventana extends javax.swing.JFrame {
             }
 
         }
-
+        //Si es igual a 0 dibujara las coordenadas de la figura Cuadrado
         if (cbxfigura.getSelectedIndex() == 0) {
+            //Se crea el try catch por si ingresa un null o un caracter especial
             try {
+                //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
                 Coordenada coordenadas[] = new Coordenada[4];
                 coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
                 coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
                 coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
                 coordenadas[3] = new Coordenada(Integer.parseInt(jrfx4.getText()), Integer.parseInt(jrfy4.getText()));
 
+                //Se declara y se instancia un objeto de la clase Cuadrado
                 Cuadrado cuadrado = new Cuadrado(coordenadas);
+                cuadrado.obtenerColor(Integer.parseInt(JTFr.getText()),Integer.parseInt(JTFg.getText()),Integer.parseInt(JTFb.getText()));
+                //Se llama al metodo dibujar donde se envia el Jpanel 
                 cuadrado.Dibujar(jPanelventana.getGraphics());
 
+                //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(cuadrado.calcularPerimetro()));
                 jlarea.setText(Float.toString(cuadrado.calcularArea()));
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+        //Si es igual a 2 dibujara las coordenadas de la figura Rectangulo
+        if (cbxfigura.getSelectedIndex() == 2) {
+            //Se crea el try catch por si ingresa un null o un caracter especial
+            try {
+                //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
+                Coordenada coordenadas[] = new Coordenada[4];
+                coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
+                coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
+                coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
+                coordenadas[3] = new Coordenada(Integer.parseInt(jrfx4.getText()), Integer.parseInt(jrfy4.getText()));
+
+                
+                //Se declara y se instancia un objeto de la clase Rectangulo
+                Rectangulo rectangulo = new Rectangulo(coordenadas);
+                //Se llama al metodo dibujar donde se envia el Jpanel 
+                rectangulo.obtenerColor(Integer.parseInt(JTFr.getText()),Integer.parseInt(JTFg.getText()),Integer.parseInt(JTFb.getText()));
+                rectangulo.Dibujar(jPanelventana.getGraphics());
+
+                //Se llaman los metodos dentro del setText y se muestran los valores calculados
+                jlperimetro.setText(Float.toString(rectangulo.calcularPerimetro()));
+                jlarea.setText(Float.toString(rectangulo.calcularArea()));
 
             } catch (Exception e) {
                 System.out.println(e);
@@ -277,59 +349,41 @@ public class Ventana extends javax.swing.JFrame {
     private void cbxfiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxfiguraActionPerformed
 
         if (cbxfigura.getSelectedIndex() == 1) {
+            //Se ocultan los JLabel que no se utilizaran en el triangulo
             jrfx4.setVisible(false);
             jrfy4.setVisible(false);
             jLabelx4.setVisible(false);
             jLabely4.setVisible(false);
+            jLabeTipo.setVisible(true);
         } else {
+            //Se ocultan los JLabel que no se utilizaran en Cuadrado y Rectangulo
             jrfx4.setVisible(true);
             jrfy4.setVisible(true);
             jLabelx4.setVisible(true);
             jLabely4.setVisible(true);
+            jLabeTipo.setVisible(false);
         }
     }//GEN-LAST:event_cbxfiguraActionPerformed
+
+    private void JTFrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFrActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Ventana().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FIGURA;
+    private javax.swing.JTextField JTFb;
+    private javax.swing.JTextField JTFg;
+    private javax.swing.JTextField JTFr;
     private java.awt.Button btndibujar;
     private javax.swing.JComboBox cbxfigura;
     private javax.swing.JLabel jLabeTipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelarea;
     private javax.swing.JLabel jLabelx2;
     private javax.swing.JLabel jLabelx3;

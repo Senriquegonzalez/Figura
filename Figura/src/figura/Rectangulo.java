@@ -15,25 +15,20 @@ public class Rectangulo extends CuadradoRectangulo{
         super(coordenadas);
     }
     
-    /*private int lado2;
-
-    public Rectangulo(Coordenada[] coordenadas,lado1) {
-        super(coordenadas);
-    }
-    
-    public Rectangulo(int lado1, int lado2) {
-        super(lado1);
-        this.lado2 = lado2;
-    }
     
     @Override
-    public void calcularArea(){
-        setArea(getLado1() * lado2);
+    public float calcularArea(){
+        
+        
+        if(getLado1()>getLado2()){
+            setArea(getLado1()*getLado2());
+        }
+        else{
+            setArea(getLado1()*getLado3());
+        }
+        
+        return getArea();
     }
-    
-    @Override
-    public void calcularPerimetro(){
-        setPerimetro((getLado1() * 2) + (this.lado2 * 2) );
-    }*/   
+     
 }
     

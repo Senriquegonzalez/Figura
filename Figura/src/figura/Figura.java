@@ -5,6 +5,7 @@
  */
 package figura;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 /**
@@ -12,16 +13,20 @@ import java.awt.Graphics;
  * @author sergio
  */
 public class Figura {
+    //Se crea un objeto de la clase Coordenada
 
     Coordenada[] coordenadas = new Coordenada[4];
 
+    //Se declaran las variables
     private float lado1;
     private float lado2;
     private float lado3;
+    private Color color;
 
     private float area;
     private float perimetro;
 
+    //Se crea el constructor
     public Figura(Coordenada[] coordenadas) {
         this.coordenadas[0] = coordenadas[0];
         this.coordenadas[1] = coordenadas[1];
@@ -34,6 +39,8 @@ public class Figura {
     }
 
     public void Dibujar(Graphics g) {
+     
+        g.setColor(color);
         g.drawLine(coordenadas[0].getEjeX(), coordenadas[0].getEjeY(), coordenadas[1].getEjeX(), coordenadas[1].getEjeY());
         g.drawLine(coordenadas[1].getEjeX(), coordenadas[1].getEjeY(), coordenadas[2].getEjeX(), coordenadas[2].getEjeY());
         g.drawLine(coordenadas[0].getEjeX(), coordenadas[0].getEjeY(), coordenadas[2].getEjeX(), coordenadas[2].getEjeY());
@@ -62,6 +69,10 @@ public class Figura {
         float semiPerimetro=(perimetro/2);
         area=(float) Math.sqrt(semiPerimetro *(semiPerimetro-lado1)*(semiPerimetro-lado2)*(semiPerimetro-lado3));
         return area;
+    }
+    
+    public void obtenerColor(int x,int y,int z){
+           color = new Color(x,y,z);
     }
 
     public Coordenada[] getCoordenadas() {
@@ -108,5 +119,15 @@ public class Figura {
     public float getPerimetro() {
         return perimetro;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+    
+    
 
 }
