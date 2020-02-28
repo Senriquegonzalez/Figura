@@ -13,7 +13,7 @@ import java.awt.Graphics;
  */
 public class Figura {
 
-    private Coordenada[] coordenadas = new Coordenada[4];
+    Coordenada[] coordenadas = new Coordenada[4];
 
     private float lado1;
     private float lado2;
@@ -26,7 +26,11 @@ public class Figura {
         this.coordenadas[0] = coordenadas[0];
         this.coordenadas[1] = coordenadas[1];
         this.coordenadas[2] = coordenadas[2];
+         this.coordenadas[3] = coordenadas[3];
+    }
 
+    Figura() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void Dibujar(Graphics g) {
@@ -67,6 +71,27 @@ public class Figura {
     public float getLado1() {
         return lado1;
     }
+
+    public void setLado1(float lado1) {
+        this.lado1 = lado1;
+    }
+
+    public void setLado2(float lado2) {
+        this.lado2 = lado2;
+    }
+
+    public void setLado3(float lado3) {
+        this.lado3 = lado3;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public void setPerimetro(float perimetro) {
+        this.perimetro = perimetro;
+    }
+    
 
     public float getLado2() {
         return lado2;

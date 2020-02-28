@@ -230,28 +230,46 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btndibujarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndibujarActionPerformed
 
-         jPanelventana.paintImmediately(00,00,jPanelventana.getWidth(),jPanelventana.getHeight());
+        //Se utiliza para pintar nuevamente jpanel
+        jPanelventana.paintImmediately(00, 00, jPanelventana.getWidth(), jPanelventana.getHeight());
 
         //define la figura que se  dibujara
         if (cbxfigura.getSelectedIndex() == 1) {
-            
+            Coordenada coordenadas[] = new Coordenada[4];
+            coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
+            coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
+            coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
             try {
-                Coordenada coordenadas[] = new Coordenada[3];
-                coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
-                coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
-                coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
                 Triangulo triangulo = new Triangulo(coordenadas);
-                 triangulo.Dibujar(jPanelventana.getGraphics());
-               
-               
+                triangulo.Dibujar(jPanelventana.getGraphics());
+
                 jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
                 jlarea.setText(Float.toString(triangulo.calcularArea()));
                 jLabeTipo.setText(triangulo.definirTriangulo());
-                
+
             } catch (Exception e) {
                 System.out.println(e);
             }
 
+        }
+
+        if (cbxfigura.getSelectedIndex() == 0) {
+            try {
+                Coordenada coordenadas[] = new Coordenada[4];
+                coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
+                coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
+                coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
+                coordenadas[3] = new Coordenada(Integer.parseInt(jrfx4.getText()), Integer.parseInt(jrfy4.getText()));
+
+                Cuadrado cuadrado = new Cuadrado(coordenadas);
+                cuadrado.Dibujar(jPanelventana.getGraphics());
+
+                jlperimetro.setText(Float.toString(cuadrado.calcularPerimetro()));
+                jlarea.setText(Float.toString(cuadrado.calcularArea()));
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
 
     }//GEN-LAST:event_btndibujarActionPerformed
