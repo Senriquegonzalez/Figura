@@ -10,10 +10,22 @@ package figura;
  * @author Yefer Patarroyo
  */
 public class Cuadrado extends CuadradoRectangulo{
-
-    public Cuadrado(Coordenada[] coordenadas) {
-        super(coordenadas);
+ float[] lados;
+ 
+    public Cuadrado(int[] coordenadasx, int[] coordenadasy, int lado) {
+        super(coordenadasx, coordenadasy, lado);
+        lados =super.getLados();
     }
+    
+ @Override
+    public float calcularArea(){
+        
+        super.setArea(lados[0]*lados[0]);
+        return super.getArea();
+        
+    }
+
+    
     
     
 }

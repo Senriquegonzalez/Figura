@@ -10,25 +10,31 @@ package figura;
  * @author Yefer Patarroyo
  */
 public class Rectangulo extends CuadradoRectangulo{
+    float[] lados;
 
-    public Rectangulo(Coordenada[] coordenadas) {
-        super(coordenadas);
+    public Rectangulo(int[] coordenadasx, int[] coordenadasy, int lado) {
+        super(coordenadasx, coordenadasy, lado);
+        lados =super.getLados();
     }
+
+   
     
     
     @Override
     public float calcularArea(){
         
         
-        if(getLado1()>getLado2()){
-            setArea(getLado1()*getLado2());
+       
+        if(lados[0]!=lados[1]){
+            setArea(lados[0]*lados[1]);
         }
         else{
-            setArea(getLado1()*getLado3());
+            setArea(lados[0]*lados[2]);
         }
         
         return getArea();
     }
+    
      
 }
     

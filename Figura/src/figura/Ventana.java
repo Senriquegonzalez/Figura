@@ -8,7 +8,7 @@ package figura;
 /**
  *
  * @author sergio
- * 
+ *
  */
 public class Ventana extends javax.swing.JFrame {
 
@@ -269,18 +269,25 @@ public class Ventana extends javax.swing.JFrame {
 
         //Si es igual a 1 dibujara las coordenadas de la figura triangulo
         if (cbxfigura.getSelectedIndex() == 1) {
-            //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
-            Coordenada coordenadas[] = new Coordenada[4];
-            coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
-            coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
-            coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
+            //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto          
+
+            int coordenadasx[] = new int[3];
+            int coordenadasy[] = new int[3];
+
+            coordenadasx[0] = new Integer(jrfx1.getText());
+            coordenadasx[1] = new Integer(jrfx2.getText());
+            coordenadasx[2] = new Integer(jrfx3.getText());
+            coordenadasy[0] = new Integer(jrfy1.getText());
+            coordenadasy[1] = new Integer(jrfy2.getText());
+            coordenadasy[2] = new Integer(jrfy3.getText());
             //Se crea el try catch por si ingresa un null o un caracter especial
             try {
                 //Se declara y se instancia un objeto de la clase Triangulo
-                Triangulo triangulo = new Triangulo(coordenadas);
+                Triangulo triangulo = new Triangulo(coordenadasx, coordenadasy, 3);
                 //Se llama al metodo dibujar donde se envia el Jpanel
-                triangulo.obtenerColor(Integer.parseInt(JTFr.getText()),Integer.parseInt(JTFg.getText()),Integer.parseInt(JTFb.getText()));
-                triangulo.Dibujar(jPanelventana.getGraphics());
+                Grafica graficar = new Grafica();
+                graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
+                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 3);
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
@@ -297,17 +304,24 @@ public class Ventana extends javax.swing.JFrame {
             //Se crea el try catch por si ingresa un null o un caracter especial
             try {
                 //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
-                Coordenada coordenadas[] = new Coordenada[4];
-                coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
-                coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
-                coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
-                coordenadas[3] = new Coordenada(Integer.parseInt(jrfx4.getText()), Integer.parseInt(jrfy4.getText()));
+                int coordenadasx[] = new int[4];
+                int coordenadasy[] = new int[4];
+
+                coordenadasx[0] = new Integer(jrfx1.getText());
+                coordenadasx[1] = new Integer(jrfx2.getText());
+                coordenadasx[2] = new Integer(jrfx3.getText());
+                coordenadasx[3] = new Integer(jrfx4.getText());
+                coordenadasy[0] = new Integer(jrfy1.getText());
+                coordenadasy[1] = new Integer(jrfy2.getText());
+                coordenadasy[2] = new Integer(jrfy3.getText());
+                coordenadasy[3] = new Integer(jrfy4.getText());
 
                 //Se declara y se instancia un objeto de la clase Cuadrado
-                Cuadrado cuadrado = new Cuadrado(coordenadas);
-                cuadrado.obtenerColor(Integer.parseInt(JTFr.getText()),Integer.parseInt(JTFg.getText()),Integer.parseInt(JTFb.getText()));
+                Cuadrado cuadrado = new Cuadrado(coordenadasx, coordenadasy, 4);
+                Grafica graficar = new Grafica();
+                graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
                 //Se llama al metodo dibujar donde se envia el Jpanel 
-                cuadrado.Dibujar(jPanelventana.getGraphics());
+               graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4);
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(cuadrado.calcularPerimetro()));
@@ -322,18 +336,24 @@ public class Ventana extends javax.swing.JFrame {
             //Se crea el try catch por si ingresa un null o un caracter especial
             try {
                 //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
-                Coordenada coordenadas[] = new Coordenada[4];
-                coordenadas[0] = new Coordenada(Integer.parseInt(jrfx1.getText()), Integer.parseInt(jrfy1.getText()));
-                coordenadas[1] = new Coordenada(Integer.parseInt(jrfx2.getText()), Integer.parseInt(jrfy2.getText()));
-                coordenadas[2] = new Coordenada(Integer.parseInt(jrfx3.getText()), Integer.parseInt(jrfy3.getText()));
-                coordenadas[3] = new Coordenada(Integer.parseInt(jrfx4.getText()), Integer.parseInt(jrfy4.getText()));
+                int coordenadasx[] = new int[4];
+                int coordenadasy[] = new int[4];
 
-                
+                coordenadasx[0] = new Integer(jrfx1.getText());
+                coordenadasx[1] = new Integer(jrfx2.getText());
+                coordenadasx[2] = new Integer(jrfx3.getText());
+                coordenadasx[3] = new Integer(jrfx4.getText());
+                coordenadasy[0] = new Integer(jrfy1.getText());
+                coordenadasy[1] = new Integer(jrfy2.getText());
+                coordenadasy[2] = new Integer(jrfy3.getText());
+                coordenadasy[3] = new Integer(jrfy4.getText());
+
                 //Se declara y se instancia un objeto de la clase Rectangulo
-                Rectangulo rectangulo = new Rectangulo(coordenadas);
-                //Se llama al metodo dibujar donde se envia el Jpanel 
-                rectangulo.obtenerColor(Integer.parseInt(JTFr.getText()),Integer.parseInt(JTFg.getText()),Integer.parseInt(JTFb.getText()));
-                rectangulo.Dibujar(jPanelventana.getGraphics());
+                Rectangulo rectangulo = new Rectangulo(coordenadasx, coordenadasy, 4);
+                Grafica graficar = new Grafica();
+                graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
+                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4);
+                
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(rectangulo.calcularPerimetro()));
@@ -372,7 +392,6 @@ public class Ventana extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FIGURA;
