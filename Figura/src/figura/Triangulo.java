@@ -17,7 +17,7 @@ public class Triangulo extends Figura {
     //costructor que recibe como parametros un array de  coordenadas
     public Triangulo(int coordenadasx[], int coordenadasy[],int lado) {
         super(coordenadasx,coordenadasy,lado);
-        lados =super.getLados();
+        lados = super.getLados();
 
     }
 

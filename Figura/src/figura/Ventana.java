@@ -281,22 +281,20 @@ public class Ventana extends javax.swing.JFrame {
             coordenadasy[1] = new Integer(jrfy2.getText());
             coordenadasy[2] = new Integer(jrfy3.getText());
             //Se crea el try catch por si ingresa un null o un caracter especial
-            try {
+          
                 //Se declara y se instancia un objeto de la clase Triangulo
                 Triangulo triangulo = new Triangulo(coordenadasx, coordenadasy, 3);
                 //Se llama al metodo dibujar donde se envia el Jpanel
                 Grafica graficar = new Grafica();
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
-                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 3);
+                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 3,jPanelventana);
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
                 jlarea.setText(Float.toString(triangulo.calcularArea()));
                 jLabeTipo.setText(triangulo.definirTriangulo());
 
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+           
 
         }
         //Si es igual a 0 dibujara las coordenadas de la figura Cuadrado
@@ -321,7 +319,7 @@ public class Ventana extends javax.swing.JFrame {
                 Grafica graficar = new Grafica();
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
                 //Se llama al metodo dibujar donde se envia el Jpanel 
-               graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4);
+               graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4,jPanelventana);
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(cuadrado.calcularPerimetro()));
@@ -352,7 +350,7 @@ public class Ventana extends javax.swing.JFrame {
                 Rectangulo rectangulo = new Rectangulo(coordenadasx, coordenadasy, 4);
                 Grafica graficar = new Grafica();
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
-                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4);
+                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4,jPanelventana);
                 
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
