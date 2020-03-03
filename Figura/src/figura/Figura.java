@@ -12,7 +12,7 @@ import java.awt.Graphics;
  *
  * @author sergio
  */
-public class Figura implements Figuras {
+public abstract  class Figura implements Figuras {
     //Se crea un objeto de la clase Coordenada
   
     private int[] coordenadasx;
@@ -30,8 +30,7 @@ public class Figura implements Figuras {
         //inicializo los vectores de coordenadas y lados dependiendo de el numero de lados
         this.coordenadasx = new int[numeroLados];
         this.coordenadasy = new int[numeroLados];
-        lados = new float[numeroLados];
-        cantidadLado = numeroLados;
+        lados = new float[numeroLados];        
         for (int i = 0; i < numeroLados; i++) {
             this.coordenadasx[i] = coordenadasx[i];
             this.coordenadasy[i] = coordenadasy[i];
@@ -57,10 +56,7 @@ public class Figura implements Figuras {
         return perimetro;
     }
 
-    @Override
-    public float calcularArea() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public void setCoordenadasx(int[] coordenadasx) {
         this.coordenadasx = coordenadasx;

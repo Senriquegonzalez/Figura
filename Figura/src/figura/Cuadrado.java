@@ -9,7 +9,7 @@ package figura;
  *
  * @author Yefer Patarroyo
  */
-public class Cuadrado extends CuadradoRectangulo{
+public class Cuadrado extends Figura {
  float[] lados;
  
     public Cuadrado(int[] coordenadasx, int[] coordenadasy, int lado) {
