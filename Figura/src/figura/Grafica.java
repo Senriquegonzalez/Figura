@@ -1,4 +1,3 @@
-
 package figura;
 
 import java.awt.Color;
@@ -11,7 +10,8 @@ import javax.swing.JPanel;
  *
  * @author Yefer Patarroyo
  */
-public class Grafica  {
+public class Grafica {
+
     private Color color;
     private float area;
     private float perimetro;
@@ -19,74 +19,95 @@ public class Grafica  {
     int coordenadasx[];
     int coordenadasy[];
     JPanel panel1;
-    ArrayList<Figura>lista = new ArrayList<>();
-    
-    public void obtenerColor(int x,int y,int z){
-           color = new Color(x,y,z);
-    }
-    public void Dibujar(Graphics g,JPanel panel1,int figuraElegida) { 
+    ArrayList<Figura> lista = new ArrayList<>();
 
-        Figura x=lista.get(figuraElegida);
-        this.coordenadasx = x.getCoordenadasx();
-        this.coordenadasy = x.getCoordenadasy();
-        this.panel1=panel1;
-        g.drawLine(panel1.getWidth()/2, 0, panel1.getWidth()/2, panel1.getHeight());
-        g.drawLine(0, panel1.getHeight()/2, panel1.getWidth(), panel1.getHeight()/2);
-        ajusteEjey();
-        ajusteEjex();
+    public void obtenerColor(int x, int y, int z) {
+        color = new Color(x, y, z);
+    }
+
+    public void Dibujar(Graphics g, JPanel panel1, int figuraElegida) {
+
+        Figura x = lista.get(figuraElegida);
+        this.panel1 = panel1;
+        g.drawLine(panel1.getWidth() / 2, 0, panel1.getWidth() / 2, panel1.getHeight());
+        g.drawLine(0, panel1.getHeight() / 2, panel1.getWidth(), panel1.getHeight() / 2);
+
         g.setColor(color);
-        if(lista.get(figuraElegida) instanceof Triangulo){
-        Triangulo triangulo = (Triangulo)x;
-        this.area = triangulo.calcularArea();
-        this.perimetro = triangulo.calcularPerimetro();
-        this.tipoTriangulo = triangulo.definirTriangulo();
-        g.fillPolygon( this.coordenadasx,  this.coordenadasy, triangulo.getCantidadLado());           
-        
-        }
-        if(lista.get(figuraElegida) instanceof Cuadrado){
-        Cuadrado cuadrado = (Cuadrado)x;
-        this.area = cuadrado.calcularArea();
-        this.perimetro = cuadrado.calcularPerimetro();
-        g.fillPolygon( this.coordenadasx,  this.coordenadasy, cuadrado.getCantidadLado());           
-        
-        }
-        if(lista.get(figuraElegida) instanceof Rectangulo){
-        Rectangulo rectangulo = (Rectangulo)x;
-        this.area = rectangulo.calcularArea();
-        this.perimetro = rectangulo.calcularPerimetro();
-        g.fillPolygon( this.coordenadasx,  this.coordenadasy, rectangulo.getCantidadLado());           
-        
-    }
-        
-               
-     
-    }
-    
-    public void ajusteEjex(){
-        
-        for (int i = 0; i <this.coordenadasx.length; i++) {
+        if (x instanceof Triangulo) {
+            Triangulo triangulo = (Triangulo) x;
+            this.area = triangulo.calcularArea();
+            this.perimetro = triangulo.calcularPerimetro();
+            this.tipoTriangulo = triangulo.definirTriangulo();
             
-            this.coordenadasx[i]=this.coordenadasx[i]+panel1.getWidth()/2;
+           
+            g.fillPolygon( ajusteEjex(triangulo.getCoordenadasx()), ajusteEjey(triangulo.getCoordenadasy()),triangulo.getCantidadLado());
+
         }
-        
-           
-    }
-    public void ajusteEjey(){
-        
-        for (int i = 0; i <this.coordenadasy.length; i++) {
-           
-                
-                 this.coordenadasy[i]=this.coordenadasy[i]*-1+panel1.getHeight()/2;
-            
-               
-            
+        if (x instanceof Cuadrado) {
+            Cuadrado cuadrado = (Cuadrado) x;
+            this.area = cuadrado.calcularArea();
+            this.perimetro = cuadrado.calcularPerimetro();
+            g.fillPolygon(ajusteEjex(cuadrado.getCoordenadasx()), ajusteEjey(cuadrado.getCoordenadasy()),  cuadrado.getCantidadLado());
+
         }
-        
-           
+        if (x instanceof Rectangulo) {
+            Rectangulo rectangulo = (Rectangulo) x;
+            this.area = rectangulo.calcularArea();
+            this.perimetro = rectangulo.calcularPerimetro();
+            g.fillPolygon(ajusteEjex(rectangulo.getCoordenadasx()), ajusteEjey(rectangulo.getCoordenadasy()), rectangulo.getCantidadLado());
+
+        }
+
     }
-    
-    public void llenarArray(Figura figura){
+
+    public int[] ajusteEjex(int coordenadasx[]) {
+ this.coordenadasx= new int[coordenadasx.length];
+        for (int i = 0; i < coordenadasx.length; i++) {
+
+            this.coordenadasx[i] = coordenadasx[i] + panel1.getWidth() / 2;
+                     
+        }
+        return this.coordenadasx;
+    }
+
+    public int[] ajusteEjey(int coordenadasy[]) {
+this.coordenadasy= new int[coordenadasy.length];
+        for (int i = 0; i < coordenadasy.length; i++) {
+
+            this.coordenadasy[i] = coordenadasy[i] * -1 + panel1.getHeight() / 2;
+
+        }
+        return this.coordenadasy;
+    }
+
+    public void llenarArray(Figura figura) {
         lista.add(figura);
     }
+
+    public float getArea() {
+        return area;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public float getPerimetro() {
+        return perimetro;
+    }
+
+    public void setPerimetro(float perimetro) {
+        this.perimetro = perimetro;
+    }
+
+    public String getTipoTriangulo() {
+        return tipoTriangulo;
+    }
+
+    public void setTipoTriangulo(String tipoTriangulo) {
+        this.tipoTriangulo = tipoTriangulo;
+    }
     
+    
+
 }

@@ -321,9 +321,9 @@ public class Ventana extends javax.swing.JFrame {
                 graficar.Dibujar(jPanelventana.getGraphics(), jPanelventana,Integer.parseInt(JTF_Figura.getText()));
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
-                /*jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
+                jlperimetro.setText(Float.toString(graficar.calcularPerimetro()));
                 jlarea.setText(Float.toString(triangulo.calcularArea()));
-                jLabeTipo.setText(triangulo.definirTriangulo());*/
+                jLabeTipo.setText(triangulo.definirTriangulo());
 
            
 
