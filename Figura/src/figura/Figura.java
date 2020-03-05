@@ -30,6 +30,7 @@ public abstract  class Figura implements Figuras {
         //inicializo los vectores de coordenadas y lados dependiendo de el numero de lados
         this.coordenadasx = new int[numeroLados];
         this.coordenadasy = new int[numeroLados];
+        this.cantidadLado = numeroLados;
         lados = new float[numeroLados];        
         for (int i = 0; i < numeroLados; i++) {
             this.coordenadasx[i] = coordenadasx[i];

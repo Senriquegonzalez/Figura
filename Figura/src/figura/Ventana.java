@@ -15,6 +15,8 @@ public class Ventana extends javax.swing.JFrame {
     /**
      * Creates new form Ventana
      */
+    
+    Grafica graficar = new Grafica();
     public Ventana() {
         initComponents();
     }
@@ -57,6 +59,9 @@ public class Ventana extends javax.swing.JFrame {
         JTFg = new javax.swing.JTextField();
         JTFb = new javax.swing.JTextField();
         JTFr = new javax.swing.JTextField();
+        BTN_Guardar = new javax.swing.JButton();
+        JTF_Figura = new javax.swing.JTextField();
+        LBL_Contador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,6 +125,21 @@ public class Ventana extends javax.swing.JFrame {
                 JTFrActionPerformed(evt);
             }
         });
+
+        BTN_Guardar.setText("Guardar");
+        BTN_Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_GuardarActionPerformed(evt);
+            }
+        });
+
+        JTF_Figura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTF_FiguraActionPerformed(evt);
+            }
+        });
+
+        LBL_Contador.setText(".");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,6 +221,12 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(JTF_Figura, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(BTN_Guardar)
+                .addGap(26, 26, 26)
+                .addComponent(LBL_Contador, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -255,7 +281,12 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(JTFr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JTFb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26)
-                .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btndibujar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BTN_Guardar)
+                        .addComponent(JTF_Figura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LBL_Contador)))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
@@ -268,10 +299,10 @@ public class Ventana extends javax.swing.JFrame {
         jPanelventana.paintImmediately(00, 00, jPanelventana.getWidth(), jPanelventana.getHeight());
 
         //Si es igual a 1 dibujara las coordenadas de la figura triangulo
-        if (cbxfigura.getSelectedIndex() == 1) {
+        //if (cbxfigura.getSelectedIndex() == 1) {
             //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto          
 
-            int coordenadasx[] = new int[3];
+            /*int coordenadasx[] = new int[3];
             int coordenadasy[] = new int[3];
 
             coordenadasx[0] = new Integer(jrfx1.getText());
@@ -285,20 +316,20 @@ public class Ventana extends javax.swing.JFrame {
                 //Se declara y se instancia un objeto de la clase Triangulo
                 Triangulo triangulo = new Triangulo(coordenadasx, coordenadasy, 3);
                 //Se llama al metodo dibujar donde se envia el Jpanel
-                Grafica graficar = new Grafica();
+                Grafica graficar = new Grafica();*/
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
-                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 3,jPanelventana);
+                graficar.Dibujar(jPanelventana.getGraphics(), jPanelventana,Integer.parseInt(JTF_Figura.getText()));
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
-                jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
+                /*jlperimetro.setText(Float.toString(triangulo.calcularPerimetro()));
                 jlarea.setText(Float.toString(triangulo.calcularArea()));
-                jLabeTipo.setText(triangulo.definirTriangulo());
+                jLabeTipo.setText(triangulo.definirTriangulo());*/
 
            
 
-        }
+        
         //Si es igual a 0 dibujara las coordenadas de la figura Cuadrado
-        if (cbxfigura.getSelectedIndex() == 0) {
+        /*if (cbxfigura.getSelectedIndex() == 0) {
             //Se crea el try catch por si ingresa un null o un caracter especial
             try {
                 //Llena el vector de coordenadas con los datos que recibimos en las cajas de texto
@@ -319,7 +350,7 @@ public class Ventana extends javax.swing.JFrame {
                 Grafica graficar = new Grafica();
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
                 //Se llama al metodo dibujar donde se envia el Jpanel 
-               graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4,jPanelventana);
+               graficar.Dibujar(jPanelventana.getGraphics() ,jPanelventana);
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
                 jlperimetro.setText(Float.toString(cuadrado.calcularPerimetro()));
@@ -350,7 +381,7 @@ public class Ventana extends javax.swing.JFrame {
                 Rectangulo rectangulo = new Rectangulo(coordenadasx, coordenadasy, 4);
                 Grafica graficar = new Grafica();
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
-                graficar.Dibujar(jPanelventana.getGraphics(), coordenadasx, coordenadasy, 4,jPanelventana);
+                graficar.Dibujar(jPanelventana.getGraphics(),jPanelventana,Integer.valueOf(JTF_Figura.getText()));
                 
 
                 //Se llaman los metodos dentro del setText y se muestran los valores calculados
@@ -360,7 +391,7 @@ public class Ventana extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println(e);
             }
-        }
+        }*/
 
     }//GEN-LAST:event_btndibujarActionPerformed
 
@@ -387,15 +418,80 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFrActionPerformed
 
+    private void JTF_FiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_FiguraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTF_FiguraActionPerformed
+
+    private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
+        // TODO add your handling code here:
+        if (cbxfigura.getSelectedIndex() == 0) {
+            int coordenadasx[] = new int[4];
+                int coordenadasy[] = new int[4];
+
+                coordenadasx[0] = new Integer(jrfx1.getText());
+                coordenadasx[1] = new Integer(jrfx2.getText());
+                coordenadasx[2] = new Integer(jrfx3.getText());
+                coordenadasx[3] = new Integer(jrfx4.getText());
+                coordenadasy[0] = new Integer(jrfy1.getText());
+                coordenadasy[1] = new Integer(jrfy2.getText());
+                coordenadasy[2] = new Integer(jrfy3.getText());
+                coordenadasy[3] = new Integer(jrfy4.getText());
+
+                //Se declara y se instancia un objeto de la clase Cuadrado
+                Cuadrado cuadrado = new Cuadrado(coordenadasx, coordenadasy, 4);
+                graficar.llenarArray(cuadrado);
+                LBL_Contador.setText(String.valueOf(graficar.lista.size()));
+        }
+        else if(cbxfigura.getSelectedIndex() == 1){
+            int coordenadasx[] = new int[3];
+            int coordenadasy[] = new int[3];
+
+            coordenadasx[0] = new Integer(jrfx1.getText());
+            coordenadasx[1] = new Integer(jrfx2.getText());
+            coordenadasx[2] = new Integer(jrfx3.getText());
+            coordenadasy[0] = new Integer(jrfy1.getText());
+            coordenadasy[1] = new Integer(jrfy2.getText());
+            coordenadasy[2] = new Integer(jrfy3.getText());
+            //Se crea el try catch por si ingresa un null o un caracter especial
+          
+                //Se declara y se instancia un objeto de la clase Triangulo
+                Triangulo triangulo = new Triangulo(coordenadasx, coordenadasy, 3);
+                //Se llama al metodo dibujar donde se envia el Jpanel
+                graficar.llenarArray(triangulo);
+                LBL_Contador.setText(String.valueOf(graficar.lista.size()));
+        }
+        else if(cbxfigura.getSelectedIndex() == 2){
+            int coordenadasx[] = new int[4];
+                int coordenadasy[] = new int[4];
+
+                coordenadasx[0] = new Integer(jrfx1.getText());
+                coordenadasx[1] = new Integer(jrfx2.getText());
+                coordenadasx[2] = new Integer(jrfx3.getText());
+                coordenadasx[3] = new Integer(jrfx4.getText());
+                coordenadasy[0] = new Integer(jrfy1.getText());
+                coordenadasy[1] = new Integer(jrfy2.getText());
+                coordenadasy[2] = new Integer(jrfy3.getText());
+                coordenadasy[3] = new Integer(jrfy4.getText());
+
+                //Se declara y se instancia un objeto de la clase Rectangulo
+                Rectangulo rectangulo = new Rectangulo(coordenadasx, coordenadasy, 4);
+                graficar.llenarArray(rectangulo);
+                LBL_Contador.setText(String.valueOf(graficar.lista.size()));
+        }
+    }//GEN-LAST:event_BTN_GuardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BTN_Guardar;
     private javax.swing.JLabel FIGURA;
+    private javax.swing.JTextField JTF_Figura;
     private javax.swing.JTextField JTFb;
     private javax.swing.JTextField JTFg;
     private javax.swing.JTextField JTFr;
+    private javax.swing.JLabel LBL_Contador;
     private java.awt.Button btndibujar;
     private javax.swing.JComboBox cbxfigura;
     private javax.swing.JLabel jLabeTipo;
