@@ -6,27 +6,25 @@
 package figura;
 
 /**
- *
+ *Se crea la clase hija Rectangulo que hereda de la clase Padre Figura.
  * @author Yefer Patarroyo
  */
 public class Rectangulo extends Figura {
+    //Se declara un array de flotantes.
     float[] lados;
 /**
  * 
- * costructor de la clase Rectangulo
- * @param coordenadasx parametro que recibe un vector de cordenadas eje x
- * @param coordenadasy parametro que recibe un vector de cordenadas eje y
- * @param lado    parametro que recibe la cantidad de lados de la fugura
+ * costructor de la clase Rectangulo.
  */
     
-    
+    /**
+     * Se crea el constructor de la clase Rectangulo.
+     */
     public Rectangulo(int[] coordenadasx, int[] coordenadasy, int lado) {
         super(coordenadasx, coordenadasy, lado);
         lados =super.getLados();
     }
-
-   
-    
+  
     /**
      * 
      * metodo sobre escrito para calcular el area
@@ -35,8 +33,6 @@ public class Rectangulo extends Figura {
     @Override
     public float calcularArea(){
         
-        
-       
         if(lados[0]!=lados[1]){
             setArea(lados[0]*lados[1]);
         }
@@ -46,7 +42,6 @@ public class Rectangulo extends Figura {
         
         return getArea();
     }
-    
-     
+ 
 }
     

@@ -15,7 +15,9 @@ public class Ventana extends javax.swing.JFrame {
     /**
      * Creates new form Ventana
      */
-    
+    /**
+     * Instanciamos el objeto llamado graficar a la clase Grafica
+     */
     Grafica graficar = new Grafica();
     public Ventana() {
         initComponents();
@@ -298,7 +300,7 @@ public class Ventana extends javax.swing.JFrame {
         //Se utiliza para pintar nuevamente jpanel
         jPanelventana.paintImmediately(00, 00, jPanelventana.getWidth(), jPanelventana.getHeight());
 
-       
+                
                 graficar.obtenerColor(Integer.parseInt(JTFr.getText()), Integer.parseInt(JTFg.getText()), Integer.parseInt(JTFb.getText()));
                 
                 graficar.Dibujar(jPanelventana.getGraphics(), jPanelventana,Integer.parseInt(JTF_Figura.getText()));
@@ -306,7 +308,7 @@ public class Ventana extends javax.swing.JFrame {
                 jlarea.setText(Float.toString(graficar.getArea()));
                 jLabeTipo.setText(graficar.getTipoTriangulo());
 
-                //Se llaman los metodos dentro del setText y se muestran los valores calculados
+                //Se llaman los metodos dentro del setText y se muestran los valores calculados.
                 
 
            
@@ -345,9 +347,17 @@ public class Ventana extends javax.swing.JFrame {
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
         // TODO add your handling code here:
         if (cbxfigura.getSelectedIndex() == 0) {
+            /**
+             * Se crea un arreglo de 4 posiciones que almacena las coordenas del eje x.
+             */
             int coordenadasx[] = new int[4];
+            /**
+             * Se crea un arreglo de 4 posiciones que almacena las coordenas del eje y.
+            */ 
                 int coordenadasy[] = new int[4];
-
+                 /**
+                  * Se asigna a cada posicion del arreglo un dato capturado desde las cajas de texto respectivamente a cada eje.
+                 */ 
                 coordenadasx[0] = new Integer(jrfx1.getText());
                 coordenadasx[1] = new Integer(jrfx2.getText());
                 coordenadasx[2] = new Integer(jrfx3.getText());
@@ -357,17 +367,27 @@ public class Ventana extends javax.swing.JFrame {
                 coordenadasy[2] = new Integer(jrfy3.getText());
                 coordenadasy[3] = new Integer(jrfy4.getText());
 
-                //Se declara y se instancia un objeto de la clase Cuadrado
+                /**
+                 * Se declara y se instancia un objeto de la clase Cuadrado.
+                */ 
                 Cuadrado cuadrado = new Cuadrado(coordenadasx, coordenadasy, 4);
+                /**
+                 * Se llama al método calcularArea() y calcularPerimetro desde el objeto cuadrado. 
+                */ 
                 cuadrado.calcularArea();
                 cuadrado.calcularPerimetro();
+                /**
+                 * Se llama al método llenarArray() el cual recibe un cuadrado.
+                 */ 
                 graficar.llenarArray(cuadrado);
                 LBL_Contador.setText(String.valueOf(graficar.lista.size()));
         }
         else if(cbxfigura.getSelectedIndex() == 1){
             int coordenadasx[] = new int[3];
             int coordenadasy[] = new int[3];
-
+            /**
+             * Se asigna a cada posicion del arreglo un dato capturado desde las cajas de texto respectivamente a cada eje.
+             */
             coordenadasx[0] = new Integer(jrfx1.getText());
             coordenadasx[1] = new Integer(jrfx2.getText());
             coordenadasx[2] = new Integer(jrfx3.getText());
@@ -376,20 +396,26 @@ public class Ventana extends javax.swing.JFrame {
             coordenadasy[2] = new Integer(jrfy3.getText());
             //Se crea el try catch por si ingresa un null o un caracter especial
           
-                //Se declara y se instancia un objeto de la clase Triangulo
+                /**
+                 * Se declara y se instancia un objeto de la clase Triangulo.
+                */
                 Triangulo triangulo = new Triangulo(coordenadasx, coordenadasy, 3);
                 triangulo.calcularArea();
                 triangulo.calcularPerimetro();
                 triangulo.definirTriangulo();
                         
-                //Se llama al metodo dibujar donde se envia el Jpanel
+                /**
+                 * Se llama al metodo dibujar donde se envia el Jpanel
+                */ 
                 graficar.llenarArray(triangulo);
                 LBL_Contador.setText(String.valueOf(graficar.lista.size()));
         }
         else if(cbxfigura.getSelectedIndex() == 2){
             int coordenadasx[] = new int[4];
                 int coordenadasy[] = new int[4];
-
+                   /**
+                    * Se asigna a cada posicion del arreglo un dato capturado desde las cajas de texto respectivamente a cada eje.
+                    */
                 coordenadasx[0] = new Integer(jrfx1.getText());
                 coordenadasx[1] = new Integer(jrfx2.getText());
                 coordenadasx[2] = new Integer(jrfx3.getText());
@@ -399,7 +425,9 @@ public class Ventana extends javax.swing.JFrame {
                 coordenadasy[2] = new Integer(jrfy3.getText());
                 coordenadasy[3] = new Integer(jrfy4.getText());
 
-                //Se declara y se instancia un objeto de la clase Rectangulo
+                /**
+                 * Se declara y se instancia un objeto de la clase Rectangulo.
+                */
                 Rectangulo rectangulo = new Rectangulo(coordenadasx, coordenadasy, 4);
                 rectangulo.calcularArea();
                 rectangulo.calcularPerimetro();

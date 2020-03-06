@@ -16,12 +16,22 @@ import java.awt.Graphics;
 
 public abstract  class Figura implements Figuras {
    
-  
+    /**
+     * Se declara el arreglo que almacena las coordenadas del eje x.
+     */
     private int[] coordenadasx;
+    /**
+     * Se declara el arreglo que almacena las coordenadas del eje y.
+     */
     private int[] coordenadasy;
+    /**
+     * Se declara el arreglo lados que almacena la cantiadad de lados segun la figura geométrica.
+     */
     private float[] lados;
 
-    //Se declaran las variables   
+    /**
+     * Se declaran las variables.
+    */ 
     private float area;
     private float perimetro;
     private int cantidadLado;
@@ -36,7 +46,9 @@ public abstract  class Figura implements Figuras {
      */
     public Figura(int coordenadasx[], int coordenadasy[], int numeroLados) {
 
-        //inicializo los vectores de coordenadas y lados dependiendo de el numero de lados
+        /**
+         * inicializo los vectores de coordenadas y lados dependiendo de el numero de lados.
+        */ 
         this.coordenadasx = new int[numeroLados];
         this.coordenadasy = new int[numeroLados];
         this.cantidadLado = numeroLados;
@@ -167,9 +179,5 @@ public abstract  class Figura implements Figuras {
     public int getCantidadLado() {
         return cantidadLado;
     }
-    
-    
-
-    
-
+     
 }

@@ -7,7 +7,8 @@ import static javafx.scene.paint.Color.color;
 import javax.swing.JPanel;
 
 /**
- * esta clase permite graficar las figuras geometricas
+ * Esta clase permite graficar las figuras geometricas
+ *
  * @author Yefer Patarroyo
  */
 public class Grafica {
@@ -19,24 +20,30 @@ public class Grafica {
     int coordenadasx[];
     int coordenadasy[];
     JPanel panel1;
+    /**
+     * Se declara e instancia un ArrayList de la clase Figura.
+     */ 
     ArrayList<Figura> lista = new ArrayList<>();
-/**
- *  metodo para capturar un color en formato RGB
- * @param x. guarda un entero entre 0 a 255
- * @param y.guarda un entero entre 0 a 255
- * @param z.guarda un entero entre 0 a 255 
- */
+
+    /**
+     * metodo para capturar un color en formato RGB
+     *
+     */
     public void obtenerColor(int x, int y, int z) {
         color = new Color(x, y, z);
     }
-/**
- * metodo usado para dibujar el eje de coordenadas
- * @param g
- * @param panel1
- * @param figuraElegida 
- */
-    public void Dibujar(Graphics g, JPanel panel1, int figuraElegida) {
 
+    /**
+     * metodo usado para dibujar el eje de coordenadas
+     *
+     */
+    /**
+     * Se crea el método Dibujar() el cual dibuja el plano cartesiano y las figuras geometricas.
+     */
+    public void Dibujar(Graphics g, JPanel panel1, int figuraElegida) {
+        /**
+         * Se crea un objeto de la clase figura el cual recibe un entero que es la figura.
+         */ 
         Figura x = lista.get(figuraElegida);
         this.panel1 = panel1;
         g.drawLine(panel1.getWidth() / 2, 0, panel1.getWidth() / 2, panel1.getHeight());
@@ -49,17 +56,16 @@ public class Grafica {
             this.area = triangulo.getArea();
             this.perimetro = triangulo.getPerimetro();
             this.tipoTriangulo = triangulo.getTipoTriangulo();
-            
-           
-            g.fillPolygon( ajusteEjex(triangulo.getCoordenadasx()), ajusteEjey(triangulo.getCoordenadasy()),triangulo.getCantidadLado());
+
+            g.fillPolygon(ajusteEjex(triangulo.getCoordenadasx()), ajusteEjey(triangulo.getCoordenadasy()), triangulo.getCantidadLado());
 
         }
         if (x instanceof Cuadrado) {
             Cuadrado cuadrado = (Cuadrado) x;
             cuadrado.calcularArea();
-            this.area =cuadrado.getArea();
+            this.area = cuadrado.getArea();
             this.perimetro = cuadrado.getPerimetro();
-            g.fillPolygon(ajusteEjex(cuadrado.getCoordenadasx()), ajusteEjey(cuadrado.getCoordenadasy()),  cuadrado.getCantidadLado());
+            g.fillPolygon(ajusteEjex(cuadrado.getCoordenadasx()), ajusteEjey(cuadrado.getCoordenadasy()), cuadrado.getCantidadLado());
 
         }
         if (x instanceof Rectangulo) {
@@ -72,29 +78,31 @@ public class Grafica {
         }
 
     }
-/**
- * metodo para ajustar el eje x de la figura geometrica
- * @param coordenadasx 
- * @return  retorna  un vector ajustado al eje de coordenadas
- */
+
+    /**
+     * metodo para ajustar el eje x de la figura geometrica
+     *
+     * @return retorna un vector ajustado al eje de coordenadas
+     */
     public int[] ajusteEjex(int coordenadasx[]) {
- this.coordenadasx= new int[coordenadasx.length];
+        this.coordenadasx = new int[coordenadasx.length];
         for (int i = 0; i < coordenadasx.length; i++) {
 
             this.coordenadasx[i] = coordenadasx[i] + panel1.getWidth() / 2;
-                     
+
         }
         return this.coordenadasx;
     }
+
     /**
-     * 
+     *
      * metodo para ajustar el eje x de la figura geometrica
-     * @param coordenadasy
-     * @return retorna  un vector ajustado al eje de coordenadas
+     *
+     * @return retorna un vector ajustado al eje de coordenadas
      */
 
     public int[] ajusteEjey(int coordenadasy[]) {
-this.coordenadasy= new int[coordenadasy.length];
+        this.coordenadasy = new int[coordenadasy.length];
         for (int i = 0; i < coordenadasy.length; i++) {
 
             this.coordenadasy[i] = coordenadasy[i] * -1 + panel1.getHeight() / 2;
@@ -102,63 +110,60 @@ this.coordenadasy= new int[coordenadasy.length];
         }
         return this.coordenadasy;
     }
-/**
- * metodo que me agrega un objeto de tipo figura a un arraylist
- * @param figura  captira  un objeto tipo figura  
- */
+
+    /**
+     * metodo que me agrega un objeto de tipo figura a un arraylist
+     *
+     */
     public void llenarArray(Figura figura) {
         lista.add(figura);
     }
-/**
- * metodo para recuperar el area
- * @return  retorna el area 
- */
-    
-    
+
+    /**
+     * metodo para recuperar el area
+     *
+     */
+
     public float getArea() {
         return area;
     }
-/**
- * 
- * metodo usado para definir un area
- * @param area 
- */
+
+    /**
+     *
+     * metodo usado para definir un area.
+     */
     public void setArea(float area) {
         this.area = area;
     }
-/**
- * 
- * metodo usado para recuperar un perimetro
- * @return 
- */
+
+    /**
+     *
+     * metodo usado para recuperar un perimetro.
+     */
     public float getPerimetro() {
         return perimetro;
     }
-/**
- * 
- * metodo usado para definir un  perimetro
- * @param perimetro 
- */
+
+    /**
+     * metodo usado para definir un perimetro.
+     */
     public void setPerimetro(float perimetro) {
         this.perimetro = perimetro;
     }
-/**
- * 
- * metodo usado para recuperar un String
- * @return  retona el tipo de triangulo
- */
+
+    /**
+     * metodo usado para recuperar un String
+     * @return retona el tipo de triangulo
+     */
     public String getTipoTriangulo() {
         return tipoTriangulo;
     }
-/**
- * 
- * metodo usado para cambiarel tipo de triangulo
- * 
- */
+
+    /**
+     * metodo usado para cambiar el tipo de triangulo.
+     */
     public void setTipoTriangulo(String tipoTriangulo) {
         this.tipoTriangulo = tipoTriangulo;
     }
-    
-    
 
 }

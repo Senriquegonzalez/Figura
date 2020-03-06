@@ -6,12 +6,20 @@
 package figura;
 
 /**
- *
+ *Se crea la clase hija Cuadrado que hereda de la clase padre Figura.
  * @author Yefer Patarroyo
  */
 public class Cuadrado extends Figura {
+ /**
+  * Se crea el arreglo lados el cual el cual almacena los lados del cuadrado 
+  */   
  float[] lados;
- 
+    /**
+     * Se crea el constructor de la clase Cuadrado
+     * @param coordenadasx
+     * @param coordenadasy
+     * @param lado 
+     */
     public Cuadrado(int[] coordenadasx, int[] coordenadasy, int lado) {
         super(coordenadasx, coordenadasy, lado);
         lados =super.getLados();
