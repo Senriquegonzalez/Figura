@@ -7,7 +7,7 @@ import static javafx.scene.paint.Color.color;
 import javax.swing.JPanel;
 
 /**
- *
+ * esta clase permite graficar las figuras geometricas
  * @author Yefer Patarroyo
  */
 public class Grafica {
@@ -20,12 +20,17 @@ public class Grafica {
     int coordenadasy[];
     JPanel panel1;
     ArrayList<Figura> lista = new ArrayList<>();
-
+/**
+ *  metodo para capturar un color en formato RGB
+ * @param x. guarda un entero entre 0 a 255
+ * @param y.guarda un entero entre 0 a 255
+ * @param z.guarda un entero entre 0 a 255 
+ */
     public void obtenerColor(int x, int y, int z) {
         color = new Color(x, y, z);
     }
 /**
- * 
+ * metodo usado para dibujar el eje de coordenadas
  * @param g
  * @param panel1
  * @param figuraElegida 
@@ -67,7 +72,11 @@ public class Grafica {
         }
 
     }
-
+/**
+ * metodo para ajustar el eje x de la figura geometrica
+ * @param coordenadasx 
+ * @return  retorna  un vector ajustado al eje de coordenadas
+ */
     public int[] ajusteEjex(int coordenadasx[]) {
  this.coordenadasx= new int[coordenadasx.length];
         for (int i = 0; i < coordenadasx.length; i++) {
@@ -77,6 +86,12 @@ public class Grafica {
         }
         return this.coordenadasx;
     }
+    /**
+     * 
+     * metodo para ajustar el eje x de la figura geometrica
+     * @param coordenadasy
+     * @return retorna  un vector ajustado al eje de coordenadas
+     */
 
     public int[] ajusteEjey(int coordenadasy[]) {
 this.coordenadasy= new int[coordenadasy.length];
@@ -87,31 +102,59 @@ this.coordenadasy= new int[coordenadasy.length];
         }
         return this.coordenadasy;
     }
-
+/**
+ * metodo que me agrega un objeto de tipo figura a un arraylist
+ * @param figura  captira  un objeto tipo figura  
+ */
     public void llenarArray(Figura figura) {
         lista.add(figura);
     }
-
+/**
+ * metodo para recuperar el area
+ * @return  retorna el area 
+ */
+    
+    
     public float getArea() {
         return area;
     }
-
+/**
+ * 
+ * metodo usado para definir un area
+ * @param area 
+ */
     public void setArea(float area) {
         this.area = area;
     }
-
+/**
+ * 
+ * metodo usado para recuperar un perimetro
+ * @return 
+ */
     public float getPerimetro() {
         return perimetro;
     }
-
+/**
+ * 
+ * metodo usado para definir un  perimetro
+ * @param perimetro 
+ */
     public void setPerimetro(float perimetro) {
         this.perimetro = perimetro;
     }
-
+/**
+ * 
+ * metodo usado para recuperar un String
+ * @return  retona el tipo de triangulo
+ */
     public String getTipoTriangulo() {
         return tipoTriangulo;
     }
-
+/**
+ * 
+ * metodo usado para cambiarel tipo de triangulo
+ * 
+ */
     public void setTipoTriangulo(String tipoTriangulo) {
         this.tipoTriangulo = tipoTriangulo;
     }

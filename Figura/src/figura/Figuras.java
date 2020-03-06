@@ -10,7 +10,11 @@ package figura;
  * @author sergio
  */
     public interface Figuras {
-    
+    /**
+     * 
+     * metodo para calcular el area debe se sobreescrito
+     * @return 
+     */
     public float calcularArea();
     
 }

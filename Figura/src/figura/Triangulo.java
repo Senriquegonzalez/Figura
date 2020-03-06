@@ -10,21 +10,32 @@ package figura;
  * @author sergio
  */
 public class Triangulo extends Figura {
+
     float[] lados;
-    
+
     //variable para guardar el tipo de triangulo
     private String tipoTriangulo;
-    //costructor que recibe como parametros un array de  coordenadas
-    public Triangulo(int coordenadasx[], int coordenadasy[],int lado) {
-        super(coordenadasx,coordenadasy,lado);
+
+    /**
+     * costructor de la clase Triangulo
+     *
+     * @param coordenadasx recibe un vector de coordenadas en x
+     * @param coordenadasy recibe un vector de coordenadas en y
+     * @param lado recibe la cantidad de lados de la figura
+     */
+    public Triangulo(int coordenadasx[], int coordenadasy[], int lado) {
+        super(coordenadasx, coordenadasy, lado);
         lados = super.getLados();
 
     }
 
-    //metodo que compara los lados del triangulo para  su clasificacion
-
+    /**
+     * metodo que compara los lados del triangulo para su clasificacion
+     *
+     * @return retorna el tipo de triangulo segun sus lados
+     */
     public String definirTriangulo() {
-          
+
         if (lados[0] == lados[1] && lados[1] == lados[2]) {
 
             tipoTriangulo = "Equilatero";
@@ -45,18 +56,22 @@ public class Triangulo extends Figura {
         return tipoTriangulo;
 
     }
-    
+
     @Override
     //CALCULA EL AREA DEL TRIANGULO CON LA FORMULA DE HERON
-    public float calcularArea(){
-        float semiPerimetro=(super.getPerimetro()/2);
-        super.setArea((float) Math.sqrt(semiPerimetro *(semiPerimetro-lados[0])*(semiPerimetro-lados[1])*(semiPerimetro-lados[2])));
+    /**
+     * METODO PARA CALCULAR EL AREA DEL TRIANGULO CON LA FORMULA DE HERON
+     * 
+     */
+    public float calcularArea() {
+        float semiPerimetro = (super.getPerimetro() / 2);
+        super.setArea((float) Math.sqrt(semiPerimetro * (semiPerimetro - lados[0]) * (semiPerimetro - lados[1]) * (semiPerimetro - lados[2])));
         return super.getArea();
-        
+
     }
 
     public String getTipoTriangulo() {
         return tipoTriangulo;
     }
-    
+
 }

@@ -12,8 +12,10 @@ import java.awt.Graphics;
  *
  * @author sergio
  */
+
+
 public abstract  class Figura implements Figuras {
-    //Se crea un objeto de la clase Coordenada
+   
   
     private int[] coordenadasx;
     private int[] coordenadasy;
@@ -25,6 +27,13 @@ public abstract  class Figura implements Figuras {
     private int cantidadLado;
 
     //Se crea el constructor el cual los vectores
+    /**
+     * 
+     * costructor de la clase fugura
+     * @param coordenadasx parametro que recibe un vector de cordenadas eje x
+     * @param coordenadasy parametro que recibe un vector de cordenadas eje y
+     * @param numeroLados  parametro que recibe la cantidad de lados de la fugura
+     */
     public Figura(int coordenadasx[], int coordenadasy[], int numeroLados) {
 
         //inicializo los vectores de coordenadas y lados dependiendo de el numero de lados
@@ -37,7 +46,11 @@ public abstract  class Figura implements Figuras {
             this.coordenadasy[i] = coordenadasy[i];
         }
     }
-
+/**
+ * 
+ * metodo para calcular el perimetro 
+ * @return retorna el perimetro
+ */
     public float calcularPerimetro() {
 
         for (int i = 0; i < lados.length-1; i++) {
@@ -58,51 +71,99 @@ public abstract  class Figura implements Figuras {
     }
 
     
-
+/**
+ * metodo para enviar un array de coordenadas del eje x
+ * 
+ * @param coordenadasx 
+ */
     public void setCoordenadasx(int[] coordenadasx) {
         this.coordenadasx = coordenadasx;
     }
-
+/**
+ * 
+ * metodo para enviar un array de coordenadas del eje y
+ * @param coordenadasy 
+ */
     public void setCoordenadasy(int[] coordenadasy) {
         this.coordenadasy = coordenadasy;
     }
-
+/**
+ * 
+ * metodo para enviar  la cantidad de lados de la figura
+ * @param lados 
+ */
     public void setLados(float[] lados) {
         this.lados = lados;
     }
-
+/**
+ * 
+ * metodo para enviar un area a la figura
+ * @param area 
+ */
     public void setArea(float area) {
         this.area = area;
     }
-
+/**
+ * 
+ * metodo para enviar un perometro a la figura
+ * @param perimetro 
+ */
     public void setPerimetro(float perimetro) {
         this.perimetro = perimetro;
     }
-
+/**
+ * 
+ * metodo para enviar la cantidad de lados de la figura
+ * @param cantidadLado 
+ */
     public void setCantidadLado(int cantidadLado) {
         this.cantidadLado = cantidadLado;
     }
-
+/**
+ * 
+ * metodo para recuperar un array de coordenadas del eje x
+ * @return  vector de coordenadas eje x
+ */
     public int[] getCoordenadasx() {
         return coordenadasx;
     }
-
+/**
+ * 
+ * metodo para recuperar un array de coordenadas del eje y
+ * @return vector de coordenadas eje y
+ */
     public int[] getCoordenadasy() {
         return coordenadasy;
     }
-
+/**
+ * 
+ * metodo para recuperar los lados de la figura
+ * @return lados de la rigura
+ */
     public float[] getLados() {
         return lados;
     }
-
+/**
+ * metodo para recuperar uel area de la figura
+ * 
+ * @return  area de la figura
+ */
     public float getArea() {
         return area;
     }
-
+/**
+ * metodo para recuperar el primetro de la figura
+ * 
+ * @return  perimetro de la figura
+ */
     public float getPerimetro() {
         return perimetro;
     }
-
+/**
+ * metodo para recuperar la cantidad de lados de la figura
+ * 
+ * @return  lados de la figura.
+ */
     public int getCantidadLado() {
         return cantidadLado;
     }

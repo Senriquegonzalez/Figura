@@ -11,7 +11,15 @@ package figura;
  */
 public class Rectangulo extends Figura {
     float[] lados;
-
+/**
+ * 
+ * costructor de la clase Rectangulo
+ * @param coordenadasx parametro que recibe un vector de cordenadas eje x
+ * @param coordenadasy parametro que recibe un vector de cordenadas eje y
+ * @param lado    parametro que recibe la cantidad de lados de la fugura
+ */
+    
+    
     public Rectangulo(int[] coordenadasx, int[] coordenadasy, int lado) {
         super(coordenadasx, coordenadasy, lado);
         lados =super.getLados();
@@ -19,7 +27,11 @@ public class Rectangulo extends Figura {
 
    
     
-    
+    /**
+     * 
+     * metodo sobre escrito para calcular el area
+     * @return  retorna el area de un rectangulo
+     */
     @Override
     public float calcularArea(){
         

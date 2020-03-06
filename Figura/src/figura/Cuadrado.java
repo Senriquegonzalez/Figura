@@ -17,6 +17,10 @@ public class Cuadrado extends Figura {
         lados =super.getLados();
     }
     
+ /**
+ *se sobre escribe el metodo calcular area para la clase cuadro
+ * @return  retorna el area 
+ */
  @Override
     public float calcularArea(){
         
