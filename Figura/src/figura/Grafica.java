@@ -24,7 +24,12 @@ public class Grafica {
     public void obtenerColor(int x, int y, int z) {
         color = new Color(x, y, z);
     }
-
+/**
+ * 
+ * @param g
+ * @param panel1
+ * @param figuraElegida 
+ */
     public void Dibujar(Graphics g, JPanel panel1, int figuraElegida) {
 
         Figura x = lista.get(figuraElegida);
@@ -35,9 +40,10 @@ public class Grafica {
         g.setColor(color);
         if (x instanceof Triangulo) {
             Triangulo triangulo = (Triangulo) x;
-            this.area = triangulo.calcularArea();
-            this.perimetro = triangulo.calcularPerimetro();
-            this.tipoTriangulo = triangulo.definirTriangulo();
+            triangulo.calcularArea();
+            this.area = triangulo.getArea();
+            this.perimetro = triangulo.getPerimetro();
+            this.tipoTriangulo = triangulo.getTipoTriangulo();
             
            
             g.fillPolygon( ajusteEjex(triangulo.getCoordenadasx()), ajusteEjey(triangulo.getCoordenadasy()),triangulo.getCantidadLado());
@@ -45,15 +51,17 @@ public class Grafica {
         }
         if (x instanceof Cuadrado) {
             Cuadrado cuadrado = (Cuadrado) x;
-            this.area = cuadrado.calcularArea();
-            this.perimetro = cuadrado.calcularPerimetro();
+            cuadrado.calcularArea();
+            this.area =cuadrado.getArea();
+            this.perimetro = cuadrado.getPerimetro();
             g.fillPolygon(ajusteEjex(cuadrado.getCoordenadasx()), ajusteEjey(cuadrado.getCoordenadasy()),  cuadrado.getCantidadLado());
 
         }
         if (x instanceof Rectangulo) {
             Rectangulo rectangulo = (Rectangulo) x;
-            this.area = rectangulo.calcularArea();
-            this.perimetro = rectangulo.calcularPerimetro();
+            rectangulo.calcularArea();
+            this.area = rectangulo.getArea();
+            this.perimetro = rectangulo.getPerimetro();
             g.fillPolygon(ajusteEjex(rectangulo.getCoordenadasx()), ajusteEjey(rectangulo.getCoordenadasy()), rectangulo.getCantidadLado());
 
         }

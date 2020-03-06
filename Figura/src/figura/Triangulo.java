@@ -54,5 +54,9 @@ public class Triangulo extends Figura {
         return super.getArea();
         
     }
+
+    public String getTipoTriangulo() {
+        return tipoTriangulo;
+    }
     
 }
